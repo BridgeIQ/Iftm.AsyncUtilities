@@ -19,7 +19,7 @@ using Iftm.AsyncUtilities
 ### NoAsyncExceptions
 
 The NoAsyncExceptions extension methods provide awaiters that don't throw exceptions if the awaited task is faulted or cancelled. Instead, they return
-a TaskResult or TaskResult<T> which contain the IsCancelled, Exception (null if no exception) and Result properies.
+a TaskResult or TaskResult&lt;T&gt; which contain the IsCancelled, Exception (null if no exception) and Result properies.
 
 For example, instead of writing
 
