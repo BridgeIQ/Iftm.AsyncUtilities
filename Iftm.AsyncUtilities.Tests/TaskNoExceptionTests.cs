@@ -65,7 +65,7 @@ public class TaskNoExceptionTests {
         var result = await CreateTask(false, null, 5).NoAsyncExceptions(false);
         Assert.False(result.IsCancelled);
         Assert.Null(result.Exception);
-        Assert.Equal(5, result.Value);
+        Assert.Equal(5, result.Result);
     }
 
     [Fact]
@@ -73,7 +73,7 @@ public class TaskNoExceptionTests {
         var result = await CreateTask(true, null, 5).NoAsyncExceptions(false);
         Assert.True(result.IsCancelled);
         Assert.Null(result.Exception);
-        Assert.Equal(0, result.Value);
+        Assert.Equal(0, result.Result);
     }
 
     [Fact]
@@ -81,7 +81,7 @@ public class TaskNoExceptionTests {
         var result = await CreateTask(false, new ArgumentException("Test"), 5).NoAsyncExceptions(false);
         Assert.False(result.IsCancelled);
         Assert.True(result.Exception is ArgumentException argEx && argEx.Message == "Test");
-        Assert.Equal(0, result.Value);
+        Assert.Equal(0, result.Result);
     }
 
     [Fact]
@@ -109,7 +109,7 @@ public class TaskNoExceptionTests {
         var result = await CreateValueTask(false, null, 5).NoAsyncExceptions(false);
         Assert.False(result.IsCancelled);
         Assert.Null(result.Exception);
-        Assert.Equal(5, result.Value);
+        Assert.Equal(5, result.Result);
     }
 
     [Fact]
@@ -117,7 +117,7 @@ public class TaskNoExceptionTests {
         var result = await CreateValueTask(true, null, 5).NoAsyncExceptions(false);
         Assert.True(result.IsCancelled);
         Assert.Null(result.Exception);
-        Assert.Equal(0, result.Value);
+        Assert.Equal(0, result.Result);
     }
 
     [Fact]
@@ -125,7 +125,6 @@ public class TaskNoExceptionTests {
         var result = await CreateValueTask(false, new ArgumentException("Test"), 5).NoAsyncExceptions(false);
         Assert.False(result.IsCancelled);
         Assert.True(result.Exception is ArgumentException argEx && argEx.Message == "Test");
-        Assert.Equal(0, result.Value);
+        Assert.Equal(0, result.Result);
     }
-
 }

@@ -14,14 +14,14 @@ To use this project, get it from NuGet and then add the Iftm.AsyncUtilities name
 using Iftm.AsyncUtilities
 ```
 
-## Documentation
+## Usage Guide
 
 ### NoAsyncExceptions
 
 The NoAsyncExceptions extension methods provide awaiters that don't throw exceptions if the awaited task is faulted or cancelled. Instead, they return
 a TaskResult or TaskResult&lt;T&gt; which contain the IsCancelled, Exception (null if no exception) and Result properies.
 
-For example, instead of writing
+For example, instead of writing:
 
 ```C#
 await Task.Delay(1000, cancellationToken);
@@ -34,10 +34,11 @@ var result = await Task.Delay(1000, cancellationToken).NoAsyncExceptions();
 if (result.IsCancelled) {
 	// task was cancelled
 }
+else if (result.Exception != null) {
+    // exception, unnecessary in case of Task.Delay which does not
+	// normally throw but included here for demonstration purposes
+}
 else {
-	// task completed successfully
+	// task completed successfully since Delay does not normally throw
 }
 ```
-
-
-
