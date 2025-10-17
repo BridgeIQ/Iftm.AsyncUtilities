@@ -11,11 +11,11 @@
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageIcon>Icon.png</PackageIcon>
-    <Authors>IFT Management</Authors>
+    <Authors>BridgeIQ</Authors>
     <Title>Iftm.AsyncUtilities</Title>
-    <Copyright>Copyright © 2020 IFT Management</Copyright>
-    <ProjectUrl>https://github.com/IFT-Management/Iftm.AsyncUtilities/blob/master/README.md</ProjectUrl>
-    <RepositoryUrl>https://github.com/IFT-Management/Iftm.AsyncUtilities</RepositoryUrl>
+    <Copyright>Copyright © 2020 BridgeIQ</Copyright>
+    <ProjectUrl>https://github.com/BridgeIQ/Iftm.AsyncUtilities/blob/master/README.md</ProjectUrl>
+    <RepositoryUrl>https://github.com/BridgeIQ/Iftm.AsyncUtilities</RepositoryUrl>
     <SignAssembly>true</SignAssembly>
     <AssemblyOriginatorKeyFile>Iftm.AsyncUtilities.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
